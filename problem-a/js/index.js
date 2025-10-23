@@ -5,10 +5,8 @@
 //Define a new variable `motto` for the value "The iSchool is my school"
 let motto = "The iSchool is my school";
 
-
 //Log out the motto
 console.log(motto);
-
 
 //Define a variable `mottoLength` that stores the length of the motto.
 //Use the `.length` property
@@ -16,11 +14,11 @@ console.log(motto);
 let mottoLength = motto.length;
 console.log(mottoLength);
 
-
 //Use the `indexOf()` String method to see if the word "cool" is in the string.
 //See http://www.w3schools.com/jsref/jsref_obj_string.asp for String methods
 //Log out a _boolean_ whether it is or not.
-console.log(motto.indexOf("cool") !== -1);
+let hasCool = motto.indexOf("cool") !== -1;
+console.log(hasCool);
 
 //Use a String method to replace the word "iSchool" in the `motto` variable with
 //the words "Information School". The new value should be re-assigned to the
@@ -29,14 +27,13 @@ console.log(motto.indexOf("cool") !== -1);
 motto = motto.replace("iSchool", "Information School");
 console.log(motto);
 
-
 //Calculate the ratio between the length of the updated motto and the length of 
 //the old (which you had saved in a variable!). Log out this ratio as a 
 //percentage with two decimal places of precision (e.g., `"123.45%"`).
 //You can use the `.toFixed()` Number method to specify the precision. 
-let lenghtDiff = (motto.length / mottoLength) * 100;
-console.log(lenghtDiff.toFixed(2) + "%");
-
+let newLength = motto.length;
+let ratio = (newLength / mottoLength) * 100;
+console.log(ratio.toFixed(2) + "%");
 
 /** Arrays **/
 
@@ -45,7 +42,6 @@ console.log(lenghtDiff.toFixed(2) + "%");
 //Log out the array.
 let numbers = [1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
 console.log(numbers);
-
 
 //Use bracket notation to change the `4` in the array to a `4.2`.
 //Log out the updated array.
@@ -57,15 +53,16 @@ console.log(numbers);
 numbers.push(3);
 console.log(numbers);
 
-
 //Find the median (middle) value of the numbers in the array.
 //Hint: sort() the array, then access the middle index of the sorted values.
 //You can use the `Math.floor()` function to round to a whole number.
 //Log out the median value.
-numbers = numbers.sort(function(a, b){return a-b});
-let median = numbers[Math.floor(numbers.length / 2)];
+let sorted = numbers.sort(function(a,b) {
+    return a - b;
+});
+let middleIndex = Math.floor(sorted.length / 2);
+let median = sorted[middleIndex];
 console.log(median);
-
 
 /** Objects **/
 
@@ -73,12 +70,7 @@ console.log(median);
 //with properties:
 //  `x` (coordinate) of 30, `y` of 50, `width` of 100, `height` of 50
 //Log out the rectangle object
-let rect = {
-    x: 30,
-    y: 50,
-    width: 100,
-    height: 50
-};
+let rect = {x: 30, y: 50, width: 100, height: 50};
 console.log(rect);
 
 //Log out the x- and y- coordinates of the rectangle (its location). Your output 
@@ -91,7 +83,8 @@ console.log(rect.x + ", " + rect.y);
 rect.height = Math.sqrt(rect.width);
 
 //Log out the rectangle's area. Use *dot notation* to access the properties!
-console.log(rect.width * rect.height);
+let area = rect.width * rect.height;
+console.log(area);
 
 //Create a variable `circle` that represents a circle. This should be an object
 //with properties:
@@ -99,11 +92,7 @@ console.log(rect.width * rect.height);
 //  `cy` of 43,
 //  `radius` equal to the LAST value in the (sorted) `numbers` array.
 //Log out the circle
-let circle = {
-    cx: 34,
-    cy: 43,
-    radius: numbers[numbers.length - 1]
-};
+let circle = {cx: 34, cy: 43, radius: sorted[sorted.length - 1]};
 console.log(circle);
 
 //Create an array `shapes` that represents a list of shapes. The array should
@@ -116,12 +105,8 @@ console.log(shapes);
 //variable name) representing a right triangle to the `shapes` array.
 //The triangle should have a `base` of 33 and a `height` of 44.
 //Log out the updated shapes array.
-shapes.push({
-    base: 33,
-    height: 44
-});
+shapes.push({base: 33, height: 44});
 console.log(shapes);
-
 
 //Log out the triangle's `hypotenuse` property (don't calculate it, just log out
 //the current property value!). What do you get?
