@@ -145,3 +145,23 @@ let fumbledAndLostFilter = makeCombinedFilter(huskiesLost, function(game){
 //Log out the array of games lost with fumbles.
 let gamesLostWithFumbles = huskyGames2016.filter(fumbledAndLostFilter);
 console.log(gamesLostWithFumbles);
+
+
+
+//OPTIONAL extra practice: create a variable `avgScoreDifference` that
+//represents the average number of points UW scored _over_ their opponent
+//(this value would be negative for games they lost). Use the `reduce()`
+//method with an anonymous callback function.
+
+// commented out for testing
+// let avgScoreDifference = huskyGames2016.reduce(function(accumulator, game) {
+//   let scoreDiff;
+//   if (game.home === "UW") {
+//     scoreDiff = game.home_score - game.opponent_score;
+//   } else {
+//     scoreDiff = game.opponent_score - game.home_score;
+//   }
+//   return accumulator + scoreDiff;
+// }, 0) / huskyGames2016.length;
+
+// console.log(avgScoreDifference.toFixed(2)); 
