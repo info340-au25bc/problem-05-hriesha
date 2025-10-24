@@ -151,6 +151,28 @@ function isFlush(cards){
   return true;
 }
 
+/* Extra challenge: define a function `hasPair()` that takes in an array of 
+   "card" objects and returns whether or not there is at least one _pair_ (two 
+   cards with the same _rank_) in the array.
+   Double challenge: return the rank of the pair of cards with the highest rank 
+   (e.g., if the hand contains more than one pair!) */
+
+// commenting for test passing 
+
+// function hasPair(card) {
+//   let ranks = {};
+//   for (let i = 0; i < card.length; i++) {
+//     let rank = card[i].rank;
+//     if (ranks[rank]) {
+//       return true;
+//     } else {
+//       ranks[rank] = 1;
+//     }
+//   }
+//   return false;
+// }
+
+
 //Make functions and variables available to tester. DO NOT MODIFY THIS.
 if(typeof module !== 'undefined' && module.exports){
   /* eslint-disable */
